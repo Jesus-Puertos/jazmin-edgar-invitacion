@@ -1,0 +1,108 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/header/Header.astro";
+import Hero from "@/components/hero/Hero.astro";
+import Gallery from "@/components/gallery/Gallery.astro";
+import History from "@/components/history/History.astro";
+import Testtimonial from "@/components/testimonial/Testimonial.astro";
+import FormularioAsistencia from "@/components/form/FormularioAsistencia.astro";
+import Complements from "@/components/complements/Complements.astro";
+import Moments from "@/components/moments/Moments.astro";
+import Footer from "@/components/footer/Footer.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <!-- 
+    - #PRELOADER
+  -->
+
+    <div class="preload" data-preaload>
+      <div class="circle"></div>
+      <p class="text">Ana & Jesús</p>
+      <p class="text">Te invitan</p>
+    </div>
+
+    <Header />
+    <main>
+      <article>
+        <!-- 
+        - #HERO
+      -->
+
+        <Hero />
+
+        <!-- 
+        - #PICTURES
+      -->
+
+        <Gallery />
+
+        <!-- 
+        - #ABOUT
+      -->
+
+        <History />
+
+        <!-- 
+        - #Code of vestimenta
+      -->
+
+        <!-- 
+        - #MESA
+      -->
+
+        <!-- 
+        - #TESTIMONIAL
+      -->
+
+        <Testtimonial />
+
+        <!-- 
+        - #RESERVATION
+      -->
+
+        <FormularioAsistencia />
+
+        <!-- 
+        - #Code
+      -->
+
+        <Complements />
+
+        <!-- 
+        - #MOMENTS
+      -->
+
+        <Moments />
+      </article>
+    </main>
+
+    <!-- 
+    - #FOOTER
+  -->
+
+    <Footer />
+
+    <!-- 
+    - #BACK TO TOP
+  -->
+
+    <a
+      href="#top"
+      class="back-top-btn active"
+      aria-label="back to top"
+      data-back-top-btn
+    >
+      <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+    </a>
+
+    <!-- 
+    - custom js link
+  -->
+
+    <!-- 
+    - ionicon link
+  -->
+  </main>
+</Layout>

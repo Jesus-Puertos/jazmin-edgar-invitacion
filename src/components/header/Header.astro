@@ -1,0 +1,183 @@
+---
+
+---
+
+<div class="topbar">
+  <div class="container">
+    <address class="topbar-item">
+      <div class="icon">
+        <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+      </div>
+
+      <span class="span">
+        <a href="https://maps.app.goo.gl/bahWmug22CxDM7fB9">
+          Te invitamos a nuestra boda</a
+        >
+      </span>
+    </address>
+
+    <div class="separator"></div>
+
+    <div class="topbar-item item-2">
+      <div class="icon">
+        <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+      </div>
+
+      <span class="span">martes: 12.00 pm</span>
+    </div>
+
+    <a href="tel:272 279 5642" class="topbar-item link">
+      <div class="icon">
+        <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+      </div>
+
+      <span class="span">272 511 00 00</span>
+    </a>
+
+    <div class="separator"></div>
+
+    <a href="mailto:Aweyalt@restaurant.com" class="topbar-item link">
+      <div class="icon">
+        <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+      </div>
+
+      <span class="span">No faltes</span>
+    </a>
+  </div>
+</div>
+
+<header class="header" data-header>
+  <div class="container">
+    <a href="#" class="logo">
+      <img
+        src="/assets/images/celebriweb.svg"
+        width="160"
+        height="50"
+        alt="Grilli - Home"
+      />
+    </a>
+
+    <nav class="navbar" data-navbar>
+      <button class="close-btn" aria-label="close menu" data-nav-toggler>
+        <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+      <a href="#" class="logo">
+        <img
+          src="/assets/images/celebriweb.svg"
+          width="160"
+          height="50"
+          alt="Grilli - Home"
+        />
+      </a>
+
+      <div class="text-center">
+        <p class="headline-1 navbar-title">
+          Acompañanos en esta ocasion muy espcecial
+        </p>
+
+        <address class="body-4">
+          Catedral de San Miguel Arcangel,<br />
+          Col. Centro #4095, Orizaba, Veracruz
+        </address>
+
+        <p class="body-4 navbar-text">
+          Nos vemos en la iglesia a las: 12.00 pm
+        </p>
+
+        <p class="body-4 navbar-text">Recepción: 04.00 pm</p>
+
+        <div class="separator"></div>
+
+        <p class="contact-label">Confirmar asistencia</p>
+
+        <a
+          href="tel:272 279 5642"
+          class="body-1 contact-number hover-underline"
+        >
+          272 279 5642
+        </a>
+      </div>
+    </nav>
+
+    <a href="#" class="btn rounded-full">
+      <span class="text text-1">Confirmar Asistencia</span>
+
+      <span class="text text-2" aria-hidden="true">Confirmar Asistencia</span>
+    </a>
+
+    <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+      <span class="line line-1"></span>
+      <span class="line line-2"></span>
+      <span class="line line-3"></span>
+    </button>
+
+    <div class="overlay" data-nav-toggler data-overlay></div>
+  </div>
+</header>
+
+<script is:inline>
+  const preloader = document.querySelector("[data-preaload]");
+
+  window.addEventListener("load", function () {
+    preloader.classList.add("loaded");
+    document.body.classList.add("loaded");
+  });
+
+  /**
+   * add event listener on multiple elements
+   */
+
+  const addEventOnElements = function (elements, eventType, callback) {
+    for (let i = 0, len = elements.length; i < len; i++) {
+      elements[i].addEventListener(eventType, callback);
+    }
+  };
+
+  /**
+   * NAVBAR
+   */
+
+  const navbar = document.querySelector("[data-navbar]");
+  const navTogglers = document.querySelectorAll("[data-nav-toggler]");
+  const overlay = document.querySelector("[data-overlay]");
+
+  const toggleNavbar = function () {
+    navbar.classList.toggle("active");
+    overlay.classList.toggle("active");
+    document.body.classList.toggle("nav-active");
+  };
+
+  addEventOnElements(navTogglers, "click", toggleNavbar);
+
+  /**
+   * HEADER & BACK TOP BTN
+   */
+
+  const header = document.querySelector("[data-header]");
+  const backTopBtn = document.querySelector("[data-back-top-btn]");
+
+  let lastScrollPos = 0;
+
+  const hideHeader = function () {
+    const isScrollBottom = lastScrollPos < window.scrollY;
+    if (isScrollBottom) {
+      header.classList.add("hide");
+    } else {
+      header.classList.remove("hide");
+    }
+
+    lastScrollPos = window.scrollY;
+  };
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY >= 50) {
+      header.classList.add("active");
+      backTopBtn.classList.add("active");
+      hideHeader();
+    } else {
+      header.classList.remove("active");
+      backTopBtn.classList.remove("active");
+    }
+  });
+</script>
